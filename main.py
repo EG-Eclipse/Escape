@@ -26,10 +26,14 @@ while distance_to_freedom > 0:
     tiredness += 3
     print("You walked 10 miles.")
   elif action.lower() == "r":
-    distance_to_freedom -= 1
-    hunger += 1
-    tiredness -= 2
-    print("You rested for a while.")
+    # Check if player is too tired to rest
+    if tiredness == 0:
+      print("You are not tired enough to rest.")
+    else:
+      distance_to_freedom -= 1
+      hunger += 1
+      tiredness -= 2
+      print("You rested for a while.")
   elif action.lower() == "e":
     distance_to_freedom -= 1
     hunger -= 2
